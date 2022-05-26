@@ -29,7 +29,7 @@ var li=document.getElementsByTagName('li');
 console.log(li);
 li[4].style.backgroundColor = 'green';
 var li1=document.getElementsByClassName('list-group-item');
-console.log(li1)*/
+console.log(li1)
 var item3=document.querySelector('.list-group-item:nth-child(3)');
 item3.style.color='white';
 var item2=document.querySelector('.list-group-item:nth-child(2)');
@@ -40,4 +40,28 @@ var odd=document.querySelectorAll('.list-group-item:nth-child(odd)');
 for(i=0;i<odd.length;i++){
     odd[i].style.backgroundColor='green'; 
 }
-
+*/
+//TASK 7
+//parent node
+var itemlist=document.querySelector('#items');
+console.log(itemlist.parentNode);
+console.log(itemlist.parentElement);
+console.log(itemlist.childNodes);
+console.log(itemlist.children);
+console.log(itemlist.firstChild);
+console.log(itemlist.firstElementChild);
+console.log(itemlist.lastChild);
+console.log(itemlist.lastElementChild);
+console.log(itemlist.nextSibling);
+console.log(itemlist.nextElementSibling);
+console.log(itemlist.previousSibling);
+console.log(itemlist.previousElementSibling);
+var newdiv= document.createElement('div');
+newdiv.className='hello';
+newdiv.id='hellobruh';
+newdiv.setAttribute('title','hello world');
+var newdivtext=document.createTextNode('Hello Bruhh');
+newdiv.appendChild(newdivtext);
+var cont=document.querySelector('header .container');
+var h1=document.querySelector('header h1');
+cont.insertBefore(newdiv,h1);
