@@ -67,18 +67,22 @@ var h1=document.querySelector('header h1');
 cont.insertBefore(newdiv,h1);*/
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
-
+document.getElementById('items');
+var filter = document.getElementById('item');
 form.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem);
+filter.addEventListener('keyup', filterItems);
 
 function addItem(e){
   e.preventDefault();
 
   var newItem = document.getElementById('item').value;
+  var newItemdes = document.getElementById('description').value;
+  var newit=newItem+" : "+newItemdes;
 
   var li = document.createElement('li');
   li.className = 'list-group-item';
-  li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(newIt));
 
   var deleteBtn = document.createElement('button');
 
@@ -98,4 +102,19 @@ function removeItem(e){
     }
   }
 }
+function filterItems(e){
+    var text = e.target.value.toLowerCase();
+    var items = itemList.getElementsByTagName('li');
+    Array.from(items).forEach(function(item){
+      var itemName = item.firstChild.textContent;
+      if(itemName.toLowerCase().indexOf(text) != -1){
+        item.style.display = 'block';
+        
+      } else {
+        item.style.display = 'none';
+        
+      }
+      form.addEventListener('submit', addItem);
+    });
+  }
 
