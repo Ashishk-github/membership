@@ -24,13 +24,20 @@ console.log(item);
 item[2].style.backgroundColor = 'green';
 for(i=0;i<item.length;i++){
     item[i].style.fontWeight='bold';
-}*/
+}
 var li=document.getElementsByTagName('li');
 console.log(li);
 li[4].style.backgroundColor = 'green';
 var li1=document.getElementsByClassName('list-group-item');
-console.log(li1)
-
-
-
+console.log(li1)*/
+var item3=document.querySelector('.list-group-item:nth-child(3)');
+item3.style.color='white';
+var item2=document.querySelector('.list-group-item:nth-child(2)');
+item2.style.backgroundColor='green';
+var items=document.querySelectorAll('.list-group-item');
+items[1].style.color='green';
+var odd=document.querySelectorAll('.list-group-item:nth-child(odd)');
+for(i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green'; 
+}
 
