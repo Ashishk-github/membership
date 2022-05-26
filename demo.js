@@ -18,13 +18,19 @@ header.innerText='yeppp';
 header.style.borderBottom='solid 3px #000';
 var titl=document.getElementsByClassName('title');
 titl[0].style.fontWeight='bold';
-titl[0].style.color='green';*/
+titl[0].style.color='green';
 var item=document.getElementsByClassName('list-group-item');
 console.log(item);
 item[2].style.backgroundColor = 'green';
 for(i=0;i<item.length;i++){
     item[i].style.fontWeight='bold';
-}
+}*/
+var li=document.getElementsByTagName('li');
+console.log(li);
+li[4].style.backgroundColor = 'green';
+var li1=document.getElementsByClassName('list-group-item');
+console.log(li1)
+
 
 
 
