@@ -70,15 +70,25 @@ var itemList = document.getElementById('items');
 document.getElementById('items');
 var filter = document.getElementById('item');
 form.addEventListener('submit', addItem);
+form.addEventListener('button', clear);
 itemList.addEventListener('click', removeItem);
 filter.addEventListener('keyup', filterItems);
+function clear(){
+  console.log(1);
+  var newItem = document.getElementById('item');
+  var newItemdes = document.getElementById('description');
+  newItem.textContent='';
+  newItemdes.textContent='';
+}
+
 
 function addItem(e){
   e.preventDefault();
 
-  var newItem = document.getElementById('item').value;
-  var newItemdes = document.getElementById('description').value;
-  var newit=newItem+" : "+newItemdes;
+  var newItem = document.getElementById('item');
+  var newItemdes = document.getElementById('description');
+  const newIt=newItem.value+" : "+newItemdes.value;
+  
 
   var li = document.createElement('li');
   li.className = 'list-group-item';
@@ -114,7 +124,7 @@ function filterItems(e){
         item.style.display = 'none';
         
       }
-      form.addEventListener('submit', addItem);
+    
     });
   }
 
